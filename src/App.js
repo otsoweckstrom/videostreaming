@@ -45,9 +45,9 @@ function App() {
                 <button onClick={() => handleSpainClick()}>Spain</button>
                 <button onClick={() => handleUSAClick()}>USA</button>
             </div>
-            <div>
+            <div className="movielist">
                 {country === 'finland' && (
-                    <div className="MovieList">
+                    <div className="movielist">
                         {MovieList.data?.length > 0 &&
                             MovieList.data.map((val) => {
                                 return (
@@ -56,6 +56,8 @@ function App() {
                                     </div>
                                 )
                             })}
+                        <h1 className="movietitle">Title</h1>
+                        <h1 className="movietitle">Title</h1>
                     </div>
                 )}
                 {country === 'spain' && (
@@ -68,6 +70,7 @@ function App() {
                                     </div>
                                 )
                             })}
+                        <h1>Title</h1>
                     </div>
                 )}
                 {country === 'usa' && (

@@ -15,12 +15,15 @@
     margin: 10px;
 }
 
-.Movielist {
+.movielist {
     display: inline;
     padding: 0;
     margin: 0;
-    background-color: red;
     width: 100px;
     color: red;
-    background: red;
+}
+
+.movietitle {
+    padding: 0;
+    margin: 0;
 }
