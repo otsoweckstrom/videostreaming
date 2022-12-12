@@ -26,20 +26,37 @@ function App() {
         )
     }
 
+    const handleBackClick = () => {
+        setCountry('')
+    }
+
     return (
         <div className="App">
-            <div>
+            <div className="headercontainer">
                 <Header></Header>
             </div>
-            <div className="Buttons">
-                <button onClick={() => handleCountryClick('finland')}>
-                    Finland
-                </button>
-                <button onClick={() => handleCountryClick('spain')}>
-                    Spain
-                </button>
-                <button onClick={() => handleCountryClick('usa')}>USA</button>
-            </div>
+            {country !== '' && (
+                <Button
+                    className="backbutton"
+                    onClick={() => handleBackClick()}
+                >
+                    Takaisin
+                </Button>
+            )}
+            {country === '' && (
+                <div className="Buttons">
+                    <Button onClick={() => handleCountryClick('finland')}>
+                        Finland
+                    </Button>
+                    <Button onClick={() => handleCountryClick('spain')}>
+                        Spain
+                    </Button>
+                    <Button onClick={() => handleCountryClick('usa')}>
+                        USA
+                    </Button>
+                </div>
+            )}
+            <img src="images/placeholder2.jpg"></img>
 
             {country !== '' && (
                 <div className="movielist">
@@ -51,7 +68,7 @@ function App() {
                                         <CardMedia
                                             component="img"
                                             height="140"
-                                            image="/images/placeholder.jpg"
+                                            image="./images/placeholder.jpg"
                                             alt="movieposter"
                                         />
                                         <CardContent>

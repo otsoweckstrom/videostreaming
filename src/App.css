@@ -2,6 +2,15 @@
     text-align: center;
 }
 
+.headercontainer {
+}
+
+.backbutton {
+}
+
+.header {
+}
+
 .movielist {
     display: flex;
     justify-content: center;
