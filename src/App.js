@@ -24,6 +24,7 @@ function App() {
                 setMovieList(response)
             }
         )
+        console.log(MovieList)
     }
 
     const handleBackClick = () => {
@@ -32,31 +33,36 @@ function App() {
 
     return (
         <div className="App">
-            <div className="headercontainer">
-                <Header></Header>
+            <div class="top-bar">
+                {country !== '' && (
+                    <Button
+                        class="back-button"
+                        onClick={() => {
+                            handleBackClick()
+                        }}
+                    >
+                        Back
+                    </Button>
+                )}
+                <h1 class="top-bar-title">Title</h1>
             </div>
-            {country !== '' && (
-                <Button
-                    className="backbutton"
-                    onClick={() => handleBackClick()}
-                >
-                    Takaisin
-                </Button>
-            )}
+
             {country === '' && (
-                <div className="Buttons">
-                    <Button onClick={() => handleCountryClick('finland')}>
-                        Finland
-                    </Button>
-                    <Button onClick={() => handleCountryClick('spain')}>
-                        Spain
-                    </Button>
-                    <Button onClick={() => handleCountryClick('usa')}>
-                        USA
-                    </Button>
+                <div className="buttons">
+                    <Button
+                        className="finland-button"
+                        onClick={() => handleCountryClick('finland')}
+                    ></Button>
+                    <Button
+                        className="spain-button"
+                        onClick={() => handleCountryClick('spain')}
+                    ></Button>
+                    <Button
+                        className="usa-button"
+                        onClick={() => handleCountryClick('usa')}
+                    ></Button>
                 </div>
             )}
-            <img src="images/placeholder2.jpg"></img>
 
             {country !== '' && (
                 <div className="movielist">
